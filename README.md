@@ -2,7 +2,7 @@
 
 
 ## Description
-Starter de plugin permettant d'appréhender:/
+Starter de plugin permettant d'appréhender:  
 - création d'une nav spécifique à un plugin en back
 - configuration de plugin
 - envois/réception AJAX vers un serveur local
@@ -15,14 +15,14 @@ Starter de plugin permettant d'appréhender:/
 
 ## Back office
 ### Configuration
-La page de configuration du plugin est disponible à l'adresse :\
+La page de configuration du plugin est disponible à l'adresse :  
 /wp-admin/admin.php?page=ekstrtr-settings\
 Deux paramètres sont configurés :
 - url du serveur distant auquel les appels sont envoyés
 - token à passer dans les headers de la demande
 
 ### Test
-Une page de test du des appels externes est disponible ici :\
+Une page de test du des appels externes est disponible ici :  
 /wp-admin/admin.php?page=ekstrtr-test\
 Le testeur du back-office permet d'accéder à la réponse du serveur
 
@@ -48,9 +48,9 @@ L'envoi suit ces étapes :
 4. retour au client et traitmeent par JS **ekstater_traiter_retour()** 
 
 En front, selon si le mode debug est activé ou non, le fichier JS contenant les fonctions 
-n'est pas le même, ce qui explique qu'elles soient en double dans le code source./
+n'est pas le même, ce qui explique qu'elles soient en double dans le code source.  
 Dans un cas, on affichera la réponse du serveur distant, dans l'autre, il sera juste 
-loggé dans la console JS./
+loggé dans la console JS.
 
 
 ## User Data / User Meta
@@ -62,7 +62,7 @@ thème, typiquement les données venant d'active directory/SSO... si le compte e
 source externe.
 
 Si une variable s'avère utile, plutôt que charger l'intégralité des meta, on préferera 
-demander uniquement cette variable : *get_user_meta(user_id, meta, true);* /
+demander uniquement cette variable : *get_user_meta(user_id, meta, true);*  
 Le 3e paramètre à true permet de récupérer la valeur unbiquement, et non un tableau.
 
 
