@@ -16,21 +16,21 @@ Starter de plugin permettant d'appréhender:
 ## Back office
 ### Configuration
 La page de configuration du plugin est disponible à l'adresse :  
-/wp-admin/admin.php?page=ekstrtr-settings\
+/wp-admin/admin.php?page=ekstrtr-settings  
 Deux paramètres sont configurés :
 - url du serveur distant auquel les appels sont envoyés
 - token à passer dans les headers de la demande
 
 ### Test
 Une page de test du des appels externes est disponible ici :  
-/wp-admin/admin.php?page=ekstrtr-test\
+/wp-admin/admin.php?page=ekstrtr-test  
 Le testeur du back-office permet d'accéder à la réponse du serveur
 
 ### Edition de page
 Le plugin dispose d'un block Gutenberg simple, permettant d'ajouter 
-la fenêtre d'envoi à n'importe quelle page. /
+la fenêtre d'envoi à n'importe quelle page.  
 Le bloc s'appelle **Fenêtre Debugger**, il est dans 
-le groupe **EK STARTER**./
+le groupe **EK STARTER**.  
 Il permet de donner un titre à la fenêtre et d'activer le mode 
 debug. Ce mode permet de décider si la réponse du serveur 
 doit être affichée.
