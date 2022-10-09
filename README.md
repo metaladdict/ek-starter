@@ -51,11 +51,22 @@ En front, selon si le mode debug est activé ou non, le fichier JS contenant les
 n'est pas le même, ce qui explique qu'elles soient en double dans le code source./
 Dans un cas, on affichera la réponse du serveur distant, dans l'autre, il sera juste 
 loggé dans la console JS./
-De plus, si le visiteur est connecté, le mode debug en front permettra d'afficher 
+
+
+## User Data / User Meta
+Si le visiteur est connecté, le mode debug en front permettra d'afficher 
 toutes les variables associées à son compte.
+- Les userdata (**get_userdata()**) présentent les informations typique d'un compte WP 
+- Les usermeta (**get_user_meta()**) sont les données généralement ajoutée par un plugin 
+thème, typiquement les données venant d'active directory/SSO... si le compte est issue d'une 
+source externe.
+
+Si une variable s'avère utile, plutôt que charger l'intégralité des meta, on préferera 
+demander uniquement cette variable : *get_user_meta(user_id, meta, true);* /
+Le 3e paramètre à true permet de récupérer la valeur unbiquement, et non un tableau.
 
 
-## Notes
+### Notes
 - Les CSS sont générées à partir de fichier LESS
 - Toutes les fenêtre de debug (front et back) sont issue d'une même 
 fonction __ekstater_debugHTML()__, d'un manière générale, on préferera 
