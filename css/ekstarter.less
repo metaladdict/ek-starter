@@ -1,0 +1,72 @@
+
+.ekstrtwin
+{
+	padding: 10px;
+	border: 1px solid #999;
+	background-color: #ddd;
+	color: #222;
+
+	h2
+	{
+		font-size: 2em;
+		text-transform: uppercase;
+	}
+}
+
+.tstbot_dtls 
+{
+	display: none;
+	
+	&.ison {display: block;}
+}
+
+.znret
+{
+	width: 90%; 
+
+	th {text-align: left; padding: 5px;}
+	td
+	{
+		vertical-align: middle;
+
+		&.tar {text-align: right;}
+		
+		> div, > span
+		{
+			font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+			padding: 15px; 
+			text-align-last: left;
+			
+			background-color: #333; 
+			color: #fff; 
+			border-radius: 10px; 
+			border: 4px solid #222;
+		
+			> span.err
+			{
+				color: #fff;
+			}
+
+			> textarea
+			{
+				width: 100%;
+				height: 400px;
+				font-family: inherit;
+			}
+		}
+		> div
+		{
+			white-space: pre; 
+		}
+		> span
+		{
+			display: inline-block;
+			min-width: 25vw;
+		}
+		
+		#tstbot_retour, #tstbot_requet
+		{
+			min-height: 100px; 
+		}
+	}
+}

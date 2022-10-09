@@ -1,0 +1,106 @@
+// out: editor.css, compress: true, strictMath: false
+
+
+.wp-block-beijaflore22-frontchat
+{
+	position: relative;
+	border-radius: 10px 10px 0 0;
+	box-shadow: 0 0 10px #000;
+	
+	.zonechatintro
+	{
+		background: #003057;
+		background: linear-gradient(90deg, #08619e 0%, #003057 100%);
+		border-radius: 10px 10px 0 0;
+		color: #fff;
+		padding: 10px;
+		line-height: 30px;
+		vertical-align: middle;
+		
+		&:before 
+		{
+			display: inline-block;
+			content: "\00a0";
+			background: url(../avatar.png) center center no-repeat;
+			background-size: contain;
+			margin-right: 5px;
+
+			width: 26px;
+			height: 29.5px;
+		}
+	}
+
+	.zonechatanswr
+	{
+		background-color: #daeaf7;
+		color: #fff;
+		padding: 10px;
+
+		div.chatbot_retour
+		{
+			padding: 5px 10px 5px 50px;
+			position: relative;
+			
+			> .inner
+			{
+				display: block;
+				background: #003057;
+				background: linear-gradient(90deg, #08619e 0%, #003057 100%);
+				border-radius: 10px;
+				color: #fff;
+				position: relative;
+				min-height: 54px;
+				padding: 15px;
+				line-height: 24px;
+				
+				> strong.rsp
+				{
+					font-weight: normal;
+				}
+				&:before
+				{
+					position: absolute;
+					content: "\00a0";
+					background: url(../avatar.png) center center no-repeat;
+					background-size: contain;
+					position: absolute;
+					left: -38px;
+					width: 26px;
+					height: 29.5px;
+					bottom: 15px;
+				}
+				
+				&:after
+				{
+					position: absolute;
+					content: "\00a0";
+					background: url(../fleche.png) center center no-repeat;
+					background-size: contain;
+					position: absolute;
+					left: -10px;
+					width: 10px;
+					height: 16px;
+					bottom: 15px;
+				}
+			}
+			> .ecomob_choices
+			{
+				padding-top: 10px;
+
+				> span
+				{
+					cursor: pointer;
+					display: inline-block;
+					padding: 2px 6px;
+					background-color: #fff;
+					border-radius: 7px;
+					margin: 0 7px 10px 0;
+					box-shadow: 3px 3px 3px #888;
+					color: #003057;
+					font-size: .9em;
+				}
+			}
+		}
+	}
+	
+}

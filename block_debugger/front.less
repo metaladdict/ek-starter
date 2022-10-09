@@ -1,0 +1,478 @@
+// main: ../chatbot_style.less
+
+.blocfrontchat
+{
+	padding: 0 !important;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	border-radius: 10px;
+	z-index: 100;
+	width: 520px;
+	max-width: 98% !important;
+	min-width: 250px;
+	height: 50px;
+
+	transition: height .3s ease-in-out;
+
+	&.opened 
+	{
+		height: 599px;
+		max-height: calc(100vh - 90px);
+		.zonechatbot .zonechatintro .btzn a.isopnclz {background-image: url(../img/btn_close.png);}
+	}
+
+	.zonechatbot
+	{
+		position: relative;
+		border-radius: 10px 10px 0 0;
+		box-shadow: 0 0 10px #000;
+		
+		.zonechatintro
+		{
+			background: #003057;
+			background: linear-gradient(90deg, #08619e 0%, #003057 100%);
+			border-radius: 10px 10px 0 0;
+			color: #fff;
+			padding: 10px;
+			line-height: 30px;
+			vertical-align: middle;
+
+			span
+			{
+				display: inline-block;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				vertical-align: middle;
+				width: calc(100% - 125px);
+				height: 26px;				
+			}
+			
+			&:before 
+			{
+				display: inline-block;
+				content: "\00a0";
+				background: url(img/avatar.png) center center no-repeat;
+				background-size: contain;
+				margin-right: 5px;
+
+				width: 26px;
+				height: 29.5px;
+			}
+
+			.btzn
+			{
+				float: right;
+
+				a
+				{
+					width: 28px;
+					height: 28px;
+					display: inline-block;
+					margin-right: 10px;
+					background-position: center center;
+					background-size: contain;
+					background-repeat: no-repeat;
+
+					&.iscycler 
+					{
+						background-image: url(../img/btn_cycle.png);
+						transition: rotate;
+	
+						&:hover
+						{
+							animation-name: rotateit;
+							animation-duration: .8s;
+							animation-iteration-count: 1;
+						}
+					}
+					&.isopnclz {background-image: url(../img/btn_open.png);}
+					
+				}
+			}
+		}
+	
+		#zonechatanswr, #zonechatpropz
+		{
+			background-color: #daeaf7;
+			color: #fff;
+			padding: 10px;
+
+			div.user_retour
+			{
+				padding: 10px;
+				position: relative;
+				text-align: right;
+
+				span.question
+				{
+					display: inline-block;
+					padding: 15px;
+					border-radius: 10px;
+					background-color: #73aae0;
+					position: relative;
+					
+				}
+				
+				&:after
+				{
+					position: absolute;
+					content: "\00a0";
+					background: url(img/fleche2.png) center center no-repeat;
+					background-size: contain;
+					right: 0;
+					width: 10px;
+					height: 16px;
+					bottom: 20px;
+				}
+			}
+
+			div.chatbot_retour, div.chatbot_annonce
+			{
+				padding: 5px 10px 5px 50px;
+				position: relative;
+
+				img {opacity: 1;}
+
+				&.autre
+				{display: none;}
+
+				> .inner
+				{
+					display: block;
+					background: #003057;
+					background: linear-gradient(90deg, #08619e 0%, #003057 100%);
+					border-radius: 10px;
+					color: #fff;
+					position: relative;
+					min-height: 54px;
+					padding: 15px;
+					line-height: 24px;
+					//overflow: hidden;
+    			//text-overflow: ellipsis;
+					
+					> span.qst
+					{
+						font-size: .6em;
+						display: block;
+						text-align: right;
+						opacity: .7;
+						display: none;
+					}
+					> strong.rsp
+					{
+						font-weight: normal;
+
+						a 
+						{
+							text-decoration: underline; 
+							color: inherit;
+							opacity: 1 !important;
+						}
+					}
+
+					&:before
+					{
+						position: absolute;
+						content: "\00a0";
+						background: url(img/avatar.png) center center no-repeat;
+						background-size: contain;
+						position: absolute;
+						left: -38px;
+						width: 26px;
+						height: 29.5px;
+						bottom: 15px;
+					}
+
+					&:after
+					{
+						position: absolute;
+						content: "\00a0";
+						background: url(img/fleche.png) center center no-repeat;
+						background-size: contain;
+						position: absolute;
+						left: -10px;
+						width: 10px;
+						height: 16px;
+						bottom: 15px;
+					}
+				}
+				
+				&.iserror .inner:before
+				{
+					background-image: url(img/avatare.png);
+				}
+
+				> .chatbot_choices
+				{
+					padding-top: 10px;
+
+					> span
+					{
+						cursor: pointer;
+						display: inline-block;
+						padding: 2px 6px;
+						background-color: #fff;
+						border-radius: 7px;
+						margin: 0 7px 10px 0;
+						box-shadow: 2px 2px 2px #888, 0 0 0 #888 inset;
+						color: #003057;
+						font-size: .9em;
+
+						transition: box-shadow .2s ease-in-out;
+
+						&:hover
+						{
+							box-shadow: 0 0 0 #888, 2px 2px 2px #888 inset;
+						}
+					}
+
+				}
+
+				.satisf
+				{
+					padding: 5px;
+					
+					a
+					{
+						color: #fff;
+						display: inline-block;
+						border-radius: 14px;
+						font-size: 15px;
+						text-align: center;
+						vertical-align: middle;
+						line-height: 26px;
+						height: 28px;
+						width: 28px;
+						margin: 3px;
+						opacity: .8;
+
+						&:hover, &.avote
+						{
+							opacity: 1;
+						}
+
+						>span
+						{
+							margin-top: 3px;
+							font-size: 20px;
+						}
+
+						&:first-child {margin-bottom: 2px;}
+						transition-property: opacity;
+						transition-timing-function: ease-in-out;
+						transition-duration: .2s;
+
+						&.voteyeah {background-color: #65a550;}
+						&.voteno {background-color: #e0552f;}
+					}
+				}
+				
+				&.avote .satisf
+				{
+					a:not(.avote) {opacity: .2 !important;}
+					a {cursor: initial;}
+				}
+
+				&:last-child
+				{
+					&::after
+					{
+						display: none;
+						padding: 10px;
+						position: relative;
+						background: linear-gradient(90deg, #08619e 0%, #003057 100%);
+						border-radius: 10px;
+						color: #fff;
+						position: relative;
+						width: 30px;
+						text-align: right;
+						line-height: 20px;
+						content: "|";
+						font-size: 18px;
+							
+						animation-name: opatilt;
+						animation-duration: 1s;
+						animation-iteration-count: infinite;
+					}
+					
+					
+				}
+
+			}
+			&.waiting_answer .chatbot_retour:last-child
+			{
+				.inner:last-child {margin-bottom: 10px;}
+				&::after {display: block;}
+			}
+		}
+
+		#zonechatpropz
+		{
+			position: absolute;
+			background-color: @bleu3;
+			z-index: 30;
+			width: 100%;
+			opacity: 0;
+			pointer-events: none;
+
+			transition: opacity .2s ease-in-out;
+
+			textarea
+			{
+				width: 100%;
+				border-radius: 10px;
+				
+				margin-bottom: 10px;
+				padding: 5px;
+
+				&#zonechatpropq {height: 100px;}
+				&#zonechatpropr {height: 150px;}
+			}
+			
+			.btn.ccl {float: right;}
+		}
+
+		&.giveprop
+		{
+			#zonechatanswr {height: 232px;}
+			#zonechatpropz
+			{
+				opacity: 1;
+				pointer-events: all;
+			}
+			.btn.prp {display: none;}
+		}
+		
+		#zonechatanswr
+		{
+			overflow: auto;
+			height: 500px;
+			max-height: calc(100vh - 189px);
+			transition: height .2s ease-in-out;
+			
+			&:before, &:after
+			{
+				height: 40px;
+				content: "\00a0";
+				display: block;
+				position: absolute;
+				width: 100%;
+				opacity: .4;
+				left: 0;
+				pointer-events: none;
+			}
+
+			&:before {top: 9px; box-shadow: 0 10px 15px #000;}
+			&:after {bottom: 10px; box-shadow: 0 -10px 15px #000;}
+		}
+
+		> label
+		{
+			background-color: #fff;
+			display: block;
+			padding: 10px 50px 10px 5px;
+			
+			#zonechatrqst
+			{
+				padding: 5px;
+				display: block;
+				border-radius: 5px;
+				width: 100%;
+			}
+
+		}
+
+		.btn
+		{
+			display: inline-block;
+			border-radius: 3px;
+			padding: 5px;
+			color: #fff;
+			background-color: @bleu1;
+
+			&.snd 
+			{
+				position: absolute;
+				content: "\00a0";
+				background: url(img/btnsnd.png) center center no-repeat;
+				background-size: contain;
+				width: 35px;
+				height: 27px;
+				right: 10px;
+				transition: right;
+	
+				&:hover
+				{
+					animation-name: moveit;
+					animation-duration: .8s;
+					animation-iteration-count: 1;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media (max-height: 680px)
+{
+	max-height: 599px;
+}
+
+
+@keyframes rotateit {
+  0% {rotate: 0deg;}
+  100% {rotate: 360deg;}
+}
+
+@keyframes moveit {
+  0% {right: 10px;}
+  40% {right: 7px;}
+  50% {right: 10px;}
+  60% {right: 7px;}
+  100% {right: 10px;}
+}
+
+
+@keyframes opatilt {
+  0% {color: rgba(255,255,255,1);}
+  75% {color: rgba(255,255,255,0);}
+}
+
+
+
+
+
+
+
+
+.chatwin
+{
+	background-color: #ddd;
+	padding: 10px;
+	color: #000;
+
+	select, input, .button
+	{
+		line-height: 30px;
+		height: 30px;
+		vertical-align: middle;
+		padding: 0 5px;
+		border: 1px solid #333;
+		margin: 2px;
+	}
+
+	.znret {width: 100%;}
+	.znret td > div, .znret td > span
+	{white-space: break-spaces;}
+	
+}
+
+
+
+
+
+
+
