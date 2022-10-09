@@ -50,7 +50,9 @@ L'envoi suit ces étapes :
 En front, selon si le mode debug est activé ou non, le fichier JS contenant les fonctions 
 n'est pas le même, ce qui explique qu'elles soient en double dans le code source./
 Dans un cas, on affichera la réponse du serveur distant, dans l'autre, il sera juste 
-loggé dans la console JS.
+loggé dans la console JS./
+De plus, si le visiteur est connecté, le mode debug en front permettra d'afficher 
+toutes les variables associées à son compte.
 
 
 ## Notes

@@ -54,6 +54,13 @@ function ekstater_render_frtdbgr($atts)
 	$html = '<div class="ekstrtwin" data-sndto="'.admin_url('admin-ajax.php').'">';
 	$html.= '<h2>'.$atts['titre'].'</h2>';
 	$html.= ekstater_debugHTML($atts['isdebug']);
+	if($atts['isdebug'] && is_user_logged_in())
+	{
+		$html.= '<h2>USER data</h2>';
+		$html.= '<pre>'.print_r(get_userdata(get_current_user_id()), true).'</pre>';
+		$html.= '<h2>USER meta</h2>';
+		$html.= '<pre>'.print_r(get_user_meta(get_current_user_id()), true).'</pre>';
+	}
 	$html.= '</div>';
 	
 	return $html;
