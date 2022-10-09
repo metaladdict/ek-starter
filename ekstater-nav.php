@@ -30,7 +30,7 @@ function ekstater_configuration()
 		settings_fields('ekstater_settings');
 		do_settings_sections('ekstater_settings');
 	?>
-	<label for="ekstrtr_serveur">Serveur du chatbot : </label><br>
+	<label for="ekstrtr_serveur">Serveur distant : </label><br>
 	<input name="ekstrtr_serveur" value="<?php echo get_option('ekstrtr_serveur');?>" type="text" id="ekstrtr_serveur_fld" size="50"><br>
 	<br>
 	<label for="ekstrtr_token">Token : </label><br>

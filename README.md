@@ -2,18 +2,59 @@
 
 
 ## Description
-Starter de plugin avec appel en POST
-Page de config et de test
-Bloc gutenberg d'envoi de commande POST, avec mode DEBUG identique à la version en back office
+Starter de plugin permettant d'appréhender:/
+- création d'une nav spécifique à un plugin en back
+- configuration de plugin
+- envois AJAX vers un serveur local
+- envois POST vers un serveur distant
+- création d'une catégorie de blocs Gutenberg
+- création d'un bloc Gutenberg simple
+- différenciation des scripts et styles cotés back et front
 
 
-## Accès
-### Inside
-Serveur: 192.168.228.24
-Port: 8091
+## Back office
+### Configuration
+La page de configuration du plugin est disponible à l'adresse :\
+/wp-admin/admin.php?page=ekstrtr-settings\
+Deux paramètre sont configuré :
+- url du serveur distant auquel les appel sont envoyés
+- token à passer dans les headers de la demande
 
-### Join
-Serveur: 192.168.228.24
-Port: 8092
+### Test
+Une page de test du des appels externes est disponible ici :\
+/wp-admin/admin.php?page=ekstrtr-test\
+Le testeur du back-office permet d'accéder à la réponse du serveur
+
+### Edition de page
+Le plugin dispose d'un block Gutenberg simple, permettant d'ajouter 
+la fenêtre d'envoi à n'importe quelle page. /
+Le bloc s'appelle **Fenêtre Debugger**, il est dans 
+le groupe **EK STARTER**./
+Il permet de donner un titre à la fenêtre et d'activer le mode 
+debug. Ce mode permet de décider si la réponse du serveur 
+doit être affichée.
+
+## Envoi de requêtes externes
+La fonctionnalité principale du plugin est l'envoi de requête à un serveur 
+distant, contenant :
+- un mot (word)
+- un nombre (ID)
+
+L'envoi suit ces étapes :
+1. une requête AJAX au serveur local par la fonction JS **ekstater_envoyer()** 
+2. réception par wordpress par **ekstater_requeteIn()** et préparation d'envoi 
+3. requête au serveur distant par **ekstater_requeteOut()** et traitement de la réponse 
+4. retour au client et traitmeent par JS **ekstater_traiter_retour()** 
+
+Selon si le mode debug est activé ou non, le fichier JS contenant les fonctions 
+n'est pas le même, ce qui explique qu'elles soient en double dans le code source.
+
+
+## Note
+Toutes les fenêtre de debug (front et back) sont issue d'une même 
+fonction __ekstater_debugHTML()__, d'un manière générale, on préferera 
+avoir des fonctions spécifique au front et au back distinctes. Cela permet 
+cependant d'offrir un exemple d'utilisation du paramètre **render_callback** 
+de Gutenberg, qui est essentiel à la création de block dynamiques.
 
 
