@@ -15,6 +15,7 @@ define('EK_STARTER_S', 'ekstarter');
 
 include_once(plugin_dir_path(__FILE__).'/ekstater-nav.php');
 include_once(plugin_dir_path(__FILE__).'/ekstater-remoting.php');
+include_once(plugin_dir_path(__FILE__).'/ekstater-updater.php');
 
 // Block gutenberg
 include_once(plugin_dir_path(__FILE__).'/block_debugger/config.php');

@@ -10,6 +10,7 @@ Starter de plugin permettant d'appréhender:/
 - création d'une catégorie de blocs Gutenberg
 - création d'un bloc Gutenberg simple
 - différenciation des scripts et styles cotés back et front
+- update à distance du plugin
 
 
 ## Back office
