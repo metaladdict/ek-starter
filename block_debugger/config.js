@@ -4,9 +4,8 @@ var el = wp.element.createElement,
 	PanelRow = wp.components.PanelRow,
 	PanelBody = wp.components.PanelBody,
 	ToggleControl = wp.components.ToggleControl,
-	SelectControl = wp.components.SelectControl,
-	registerBlockType = wp.blocks.registerBlockType,
-	RichText = wp.blockEditor.RichText;
+	TextControl = wp.components.TextControl,
+	registerBlockType = wp.blocks.registerBlockType;
 
 
 	registerBlockType('ekstrtcat/frtdbgr', {

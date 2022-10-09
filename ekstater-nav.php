@@ -48,6 +48,5 @@ function ekstater_configuration()
 function ekstater_testpage()
 {
   // Page de test du bakc office
-
 	echo ekstater_debugHTML();
 }

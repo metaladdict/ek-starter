@@ -8,12 +8,6 @@
   font-size: 2em;
   text-transform: uppercase;
 }
-.tstbot_dtls {
-  display: none;
-}
-.tstbot_dtls.ison {
-  display: block;
-}
 .znret {
   width: 90%;
 }
@@ -53,8 +47,4 @@
 .znret td > span {
   display: inline-block;
   min-width: 25vw;
-}
-.znret td #tstbot_retour,
-.znret td #tstbot_requet {
-  min-height: 100px;
 }

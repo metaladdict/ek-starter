@@ -5,7 +5,7 @@
 Starter de plugin permettant d'appréhender:/
 - création d'une nav spécifique à un plugin en back
 - configuration de plugin
-- envois AJAX vers un serveur local
+- envois/réception AJAX vers un serveur local
 - envois POST vers un serveur distant
 - création d'une catégorie de blocs Gutenberg
 - création d'un bloc Gutenberg simple
@@ -16,8 +16,8 @@ Starter de plugin permettant d'appréhender:/
 ### Configuration
 La page de configuration du plugin est disponible à l'adresse :\
 /wp-admin/admin.php?page=ekstrtr-settings\
-Deux paramètre sont configuré :
-- url du serveur distant auquel les appel sont envoyés
+Deux paramètres sont configurés :
+- url du serveur distant auquel les appels sont envoyés
 - token à passer dans les headers de la demande
 
 ### Test
@@ -46,15 +46,18 @@ L'envoi suit ces étapes :
 3. requête au serveur distant par **ekstater_requeteOut()** et traitement de la réponse 
 4. retour au client et traitmeent par JS **ekstater_traiter_retour()** 
 
-Selon si le mode debug est activé ou non, le fichier JS contenant les fonctions 
-n'est pas le même, ce qui explique qu'elles soient en double dans le code source.
+En front, selon si le mode debug est activé ou non, le fichier JS contenant les fonctions 
+n'est pas le même, ce qui explique qu'elles soient en double dans le code source./
+Dans un cas, on affichera la réponse du serveur distant, dans l'autre, il sera juste 
+loggé dans la console JS.
 
 
-## Note
-Toutes les fenêtre de debug (front et back) sont issue d'une même 
+## Notes
+- Les CSS sont générées à partir de fichier LESS
+- Toutes les fenêtre de debug (front et back) sont issue d'une même 
 fonction __ekstater_debugHTML()__, d'un manière générale, on préferera 
-avoir des fonctions spécifique au front et au back distinctes. Cela permet 
+avoir des fonctions spécifiques au front et au back distinctes. Cela permet 
 cependant d'offrir un exemple d'utilisation du paramètre **render_callback** 
-de Gutenberg, qui est essentiel à la création de block dynamiques.
+de Gutenberg, qui est très utile pour la création de blocks dynamiques.
 
 
